@@ -17,4 +17,4 @@ selenium-debug.log
 *.sln
 
 # Ignore firebase config
-src/config/db.js
+
