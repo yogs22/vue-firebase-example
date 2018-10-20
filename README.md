@@ -17,6 +17,9 @@ Firebase - https://firebase.google.com
 
 ```cd Vue-firebase-example```
 
+The firebase config located at src/config/db.js
+
+
 ```npm install ``` 
 
 Or
