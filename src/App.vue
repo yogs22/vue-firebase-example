@@ -25,7 +25,7 @@ export default {
       showNav: '' 
     }
   },
-  updated() {
+  mounted() {
     const routeNotAllowed = `${'Login'}.${'SignUp'}`
     this.showNav = routeNotAllowed.indexOf(this.$route.name) >= 0 ? false : true
   }
