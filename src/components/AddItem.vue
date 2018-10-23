@@ -8,12 +8,13 @@
                 <form @submit.prevent="addItem">
                     <div class="form-group">
                         <label>Item Name:</label>
-                        <input type="text" class="form-control" v-validate="'required'" v-model="newItem.name"/>
+                        <input type="text" class="form-control" v-validate="'required'" v-model="newItem.name" name="name"/>
                         <span class="text-danger" v-if="submitted && errors.has('name')">{{ errors.first('name') }}</span>
                     </div>
                     <div class="form-group">
                         <label>Item Price:</label>
-                        <input type="text" class="form-control" v-model="newItem.price"/>
+                        <input type="number" class="form-control" v-validate="'required|numeric'" v-model="newItem.price" name="price"/>
+                        <span class="text-danger" v-if="submitted && errors.has('price')">{{ errors.first('price') }}</span>
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btn btn-success" value="Add Item"/>

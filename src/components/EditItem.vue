@@ -8,11 +8,13 @@
                 <form @submit.prevent="updateItem">
                     <div class="form-group">
                         <label>Item Name:</label>
-                        <input type="text" class="form-control" v-model="newItem.name"/>
+                        <input type="text" class="form-control" v-validate="'required'" v-model="newItem.name" name="name"/>
+                        <span class="text-danger" v-if="submitted && errors.has('name')">{{ errors.first('name') }}</span>
                     </div>
                     <div class="form-group">
                         <label>Item Price:</label>
-                        <input type="text" class="form-control" v-model="newItem.price" />
+                        <input type="number" class="form-control" v-validate="'required|numeric'" v-model="newItem.price" name="price"/>
+                        <span class="text-danger" v-if="submitted && errors.has('price')">{{ errors.first('price') }}</span>
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btn btn-primary" value="Update Item"/>
@@ -25,7 +27,11 @@
 
 <script>
 	import { itemsRef } from '../config/db'
+	import Vue from 'vue'
 	import toastr from 'toastr'
+	import VeeValidate from 'vee-validate'
+
+	Vue.use(VeeValidate)
 
 	export default {
 		name: 'EditItem',
@@ -34,7 +40,8 @@
 			itemsObj: {
 				source: itemsRef,
 				asObject: true
-			}
+			},
+			submitted: false
 		},
 		data() {
 			return {
@@ -50,9 +57,14 @@
 		},
 		methods: {
 			updateItem() {
-				itemsRef.child(this.$route.params.id).set(this.newItem);
-				this.$router.push('list-item')
-				toastr.success('Item updated successfully')
+				this.submitted = true
+				this.$validator.validate().then(valid => {
+					if (valid) {
+						itemsRef.child(this.$route.params.id).set(this.newItem);
+						this.$router.push('list-item')
+						toastr.success('Item updated successfully')
+					}
+				})
 			}
 		}
 	}

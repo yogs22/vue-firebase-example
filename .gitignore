@@ -16,5 +16,5 @@ selenium-debug.log
 *.njsproj
 *.sln
 
-# Ignore firebase config
+# Ignote config 
 src/config/config.js
