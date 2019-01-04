@@ -9,6 +9,7 @@
 	        </tr>
 	      </thead>
 	      <tbody>
+					<square></square>
 	      	<tr v-for="item in items" :key="item['.key']">
 	      		<td>{{ item.name }}</td>
 	      		<td>{{ item.price }}</td>
@@ -21,7 +22,7 @@
 	      	</tr>
 	      </tbody>
 	    </table>
-	</div>	
+	</div>
 </template>
 
 <script>

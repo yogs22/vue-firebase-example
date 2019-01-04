@@ -8225,6 +8225,11 @@ vue-router@^3.0.1:
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.0.1.tgz#d9b05ad9c7420ba0f626d6500d693e60092cc1e9"
   integrity sha512-vLLoY452L+JBpALMP5UHum9+7nzR9PeIBCghU9ZtJ1eWm6ieUI8Zb/DI3MYxH32bxkjzYV1LRjNv4qr8d+uX/w==
 
+vue-spinners@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/vue-spinners/-/vue-spinners-1.0.2.tgz#95cf4fd2e733900911e36b372febb536af95f6ed"
+  integrity sha512-Wndmjn9PN5Y+L1m94n7rMqzhi+2QZMMqJtF9hDW13K2wa5x73Yguh99zcbSLQJyz7mwQ4xQOWbOFIyklgHdOLw==
+
 vue-style-loader@^3.0.0, vue-style-loader@^3.0.1:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/vue-style-loader/-/vue-style-loader-3.1.2.tgz#6b66ad34998fc9520c2f1e4d5fa4091641c1597a"
