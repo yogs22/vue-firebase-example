@@ -1,7 +1,7 @@
 <template>
 	<div class="login">
 		<img src="@/assets/logo.png">
-		<h3>Sign In</h3>
+		<h3>Log In</h3>
 		<form @submit="logIn">
 			<input type="text" v-model="email" placeholder="Email"> 
 			<input type="password" v-model="password" placeholder="Password">
