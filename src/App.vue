@@ -49,7 +49,7 @@ a {
 }
 
 nav {
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 #nprogress .bar {
